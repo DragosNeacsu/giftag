@@ -1,0 +1,59 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.autocomplete-item {
+    background-color: #fff;
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    padding: 5px;
+    cursor: pointer;
+    max-width: 280px;
+    transition: 0.3s;
+}
+
+    .autocomplete-item:hover {
+        background-color: #cff2ff;
+    }
+        .autocomplete-item:hover .autocomplete-image {
+            opacity: 1;
+        }
+
+    .autocomplete-item .autocomplete-image {
+        display: block;
+        opacity: 0.3;
+        float: left;
+        height: 24px;
+        width: 24px;
+        transition: 0.3s;
+        margin-top: 1px;
+        background: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns%3D"http%3A//www.w3.org/2000/svg"%20viewBox%3D"0%200%2024%2024"><path%20fill%3D"%2334363D"%20d%3D"M17.8%2020.1l.6-.6c.2-.2.3-.5.2-.8l-2.2-9.3%204.1-4.2c.5-.5.5-1.3%200-1.9-.5-.5-1.4-.5-1.9%200l-4.2%204.1-9.1-2c-.3-.1-.6%200-.8.2l-.6.6c-.4.4-.3%201.1.2%201.4l7.2%203.2-3.7%203.7-2.3-.8c-.3-.1-.6%200-.8.2l-1.5%201.3%204.2%201.6%201.6%204.2%201.3-1.5c.2-.2.3-.6.2-.8l-.8-2.3%203.7-3.7%203.2%207.2c.3.5%201%20.6%201.4.2z"/></svg>');
+    }
+
+span.countryName {
+    font-size: 10px;
+}
+
+
+.ui-widget {
+    padding-left: 0 !important;
+}
+
+    .ui-widget li {
+        list-style: none;
+    }
