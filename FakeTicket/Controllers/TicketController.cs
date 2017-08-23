@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FakeTicket.Controllers
 {
-    public class TicketController : Controller
+    public class TicketController : BaseController
     {
         [HttpPost]
         public ActionResult Generate(Ticket ticket)

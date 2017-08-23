@@ -3,20 +3,17 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
+using FakeTicket.Infrastructure;
 
 namespace FakeTicket.Controllers
 {
-    public class SkyScannerController : Controller
+    public class SkyScannerController : BaseController
     {
         [HttpGet]
         public JsonResult GetDestination(string keyword)
         {
-
-            var apiKey = "prtl6749387986743898559646983194";
-            var market = "GB";
-            var currency = "GBP";
             var locale = "en-GB";
-            string url = $"http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/{market}/{currency}/{locale}/?query={keyword}&apiKey={apiKey}";
+            string url = $"{Settings.SkyScannerUrl}GB/GBP/{locale}/?query={keyword}&apiKey={Settings.SkyScannerApiKey}";
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -31,7 +28,8 @@ namespace FakeTicket.Controllers
             var resultList = new List<dynamic>();
 
             var directoryPath = System.Web.HttpContext.Current.Server.MapPath($"/Content/Airlines/");
-            var fileNames = Directory.EnumerateFiles(directoryPath, "*.*", SearchOption.AllDirectories);
+            var fileNames = Directory.EnumerateFiles(directoryPath, $"*{keyword.ToLower()}*.*", SearchOption.TopDirectoryOnly);
+
             foreach (var file in fileNames)
             {
                 var fileName = file.Substring(file.LastIndexOf("\\") + 1);
