@@ -1314,11 +1314,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GlobalRes.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_LocalResources\GlobalRes.ro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GlobalRes.ro.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\SkyScannerController.cs" />
@@ -1357,10 +1352,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_LocalResources\GlobalRes.ro.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>GlobalRes.ro.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\GlobalRes.ro.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
