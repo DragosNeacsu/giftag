@@ -133,6 +133,15 @@ namespace FakeTicket.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First Class.
         /// </summary>
         public static string FirstClass {

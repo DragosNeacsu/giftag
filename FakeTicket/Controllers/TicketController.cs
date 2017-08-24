@@ -54,11 +54,14 @@ namespace FakeTicket.Controllers
 
         private Bitmap AddAirlineLogo(Bitmap bitmap, string airlineLogo)
         {
-            var airlineLogoImage = System.Web.HttpContext.Current.Server.MapPath($"/Content/Airlines/{airlineLogo}");
-            Bitmap airlineBitmap = (Bitmap)Image.FromFile(airlineLogoImage);//load the image file
+            if (!string.IsNullOrEmpty(airlineLogo))
+            {
+                var airlineLogoImage = System.Web.HttpContext.Current.Server.MapPath($"/Content/Airlines/{airlineLogo}");
+                Bitmap airlineBitmap = (Bitmap) Image.FromFile(airlineLogoImage); //load the image file
 
-            Graphics gra = Graphics.FromImage(bitmap);
-            gra.DrawImage(airlineBitmap, new Point(70, 70));
+                Graphics gra = Graphics.FromImage(bitmap);
+                gra.DrawImage(airlineBitmap, new Point(70, 70));
+            }
             return bitmap;
         }
 

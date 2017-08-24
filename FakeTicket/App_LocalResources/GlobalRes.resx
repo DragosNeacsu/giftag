@@ -141,6 +141,9 @@
   <data name="Economy" xml:space="preserve">
     <value>Economy</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="FirstClass" xml:space="preserve">
     <value>First Class</value>
   </data>

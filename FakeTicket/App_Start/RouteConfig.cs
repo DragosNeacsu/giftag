@@ -12,7 +12,7 @@ namespace FakeTicket
             routes.MapRoute(
                 name: "Language",
                 url: "{lang}/{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, lang = UrlParameter.Optional }
             );
 
             routes.MapRoute(

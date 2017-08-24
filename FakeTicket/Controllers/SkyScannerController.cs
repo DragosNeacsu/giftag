@@ -7,13 +7,14 @@ using FakeTicket.Infrastructure;
 
 namespace FakeTicket.Controllers
 {
-    public class SkyScannerController : BaseController
+    public class SkyScannerController : Controller
     {
         [HttpGet]
         public JsonResult GetDestination(string keyword)
         {
             var locale = "en-GB";
-            string url = $"{Settings.SkyScannerUrl}GB/GBP/{locale}/?query={keyword}&apiKey={Settings.SkyScannerApiKey}";
+            string url = $"{Settings.SkyScannerUrl}autosuggest/UK/{locale}/{keyword}";
+
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());

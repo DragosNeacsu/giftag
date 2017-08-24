@@ -57,8 +57,14 @@ span.countryName {
 
 .ui-widget {
     padding-left: 0 !important;
+    z-index: 999;
+    position: absolute !important;
 }
 
     .ui-widget li {
         list-style: none;
     }
+
+.form-control {
+    max-width: none;
+}

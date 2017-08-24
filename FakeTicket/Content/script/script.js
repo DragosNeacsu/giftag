@@ -2,9 +2,9 @@
     $(this).autocomplete({
         source: function (request, response) {
             $.ajax({
-                url: "/skyscanner/getdestination?keyword=" + request.term,
+                url: currentCulture + "/skyscanner/getdestination?keyword=" + request.term,
                 success: function (data) {
-                    response(JSON.parse(data).Places);
+                    response(JSON.parse(data));
                 }
             });
         },
@@ -30,7 +30,7 @@
 $("#airline").autocomplete({
     source: function (request, response) {
         $.ajax({
-            url: "/skyscanner/GetAirlines?keyword=" + request.term,
+            url: currentCulture + "/skyscanner/GetAirlines?keyword=" + request.term,
             success: function (data) {
                 response(data);
             }
@@ -60,5 +60,5 @@ $(function () {
 
 $('.selectpicker').on('change', function () {
     var selected = $(this).find("option:selected").val();
-    $('#language').val(selected);
+    window.location.href = selected;
 });
