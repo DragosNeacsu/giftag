@@ -1,10 +1,10 @@
-﻿@model FakeTicket.Models.TicketViewModel 
+﻿@model FakeTicket.Models.TicketViewModel
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-<img src="@Url.Action("Get", "Ticket", new { path = Model.GeneratedTicketPath })" alt="" style="max-width:100%"/>
+<img src="@Url.Action("Get", "Ticket", new { path = Model.GeneratedTicket.Path }) alt="" style="max-width:100%" />
 <div>
     <p><b>First Name: </b>@Model.FirstName</p>
     <p><b>Last Name: </b>@Model.LastName</p>
@@ -19,9 +19,3 @@
     <p><b>Class: </b>@Model.Class</p>
     <p><b>Language: </b>@Model.Language</p>
 </div>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="V3K6VE8FNV6HN">
-    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>

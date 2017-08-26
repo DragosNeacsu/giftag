@@ -2,9 +2,10 @@
 @{
     ViewBag.Title = "Home";
 }
-<h1>Generate a fake boarding pass and make a better gift</h1>
-<form action="@Thread.CurrentThread.CurrentCulture/Ticket/Generate" method="POST">
-    <div class="container">
+<h1>Create a fake boarding pass and make a better gift</h1>
+<br />
+<form action="@Thread.CurrentThread.CurrentCulture/PayPal/PayWithPaypal" method="POST">
+    <div class="container" id="details">
         <input type="hidden" id="language" value="en" />
         <div class="row">
             <div class="form-group col-sm-4">
@@ -37,7 +38,7 @@
         <div class="row">
             <div class="form-group col-sm-4">
                 <label for="flightDate" class="col-form-label">@GlobalRes.DepartureDate</label>
-                <input class="form-control" name="flightDate" type="date" value="2011-08-19" id="flightDate">
+                <input class="form-control" name="flightDate" type="date" value="2017-08-19" id="flightDate">
             </div>
             <div class="form-group col-sm-4">
                 <label for="boardingTime" class="col-form-label">@GlobalRes.BoardingTime</label>
@@ -68,7 +69,44 @@
                 </select>
             </div>
         </div>
-        <br>
-        <button type="submit" class="btn btn-primary">@GlobalRes.Submit</button>
+        <br />
+        <button type="button" id="next" class="btn btn-primary pull-right">@GlobalRes.Next</button>
+    </div>
+    <div class="container" id="template">
+        <h2>Choose a template for your ticket</h2>
+        <div class="row">
+            <div class="col col-sm-6 selected">
+                <span class="select-icon"></span>
+                <img data-id="1" src="~/Content/TicketTemplate/template_1.png" />
+            </div>
+            <div class="col col-sm-6">
+                <span class="select-icon"></span>
+                <img data-id="2" src="~/Content/TicketTemplate/template_1.png" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-6">
+                <span class="select-icon"></span>
+                <img data-id="3" src="~/Content/TicketTemplate/template_1.png" />
+            </div>
+            <div class="col col-sm-6">
+                <span class="select-icon"></span>
+                <img data-id="4" src="~/Content/TicketTemplate/template_1.png" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-6">
+                <span class="select-icon"></span>
+                <img data-id="5" src="~/Content/TicketTemplate/template_1.png" />
+            </div>
+            <div class="col col-sm-6">
+                <span class="select-icon"></span>   
+                <img data-id="6" src="~/Content/TicketTemplate/template_1.png" />
+            </div>
+        </div>
+        <input type="hidden" name="template" value="1" />
+        <br />
+        <button type="button" id="back" class="btn btn-primary pull-left">@GlobalRes.Back</button>
+        <button type="submit" class="btn btn-primary pull-right">@GlobalRes.Submit</button>
     </div>
 </form> 

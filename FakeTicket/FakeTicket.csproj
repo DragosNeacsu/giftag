@@ -57,6 +57,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PayPal, Version=1.8.0.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.8.0\lib\net451\PayPal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1287,6 +1295,8 @@
     <Content Include="Content\flags\4x3\za.svg" />
     <Content Include="Content\flags\4x3\zm.svg" />
     <Content Include="Content\flags\4x3\zw.svg" />
+    <Content Include="Content\img\check.png" />
+    <Content Include="Content\img\tick.png" />
     <Content Include="Content\script\angular.min.js" />
     <Content Include="Content\script\bootstrap-select.min.js" />
     <Content Include="Content\script\bootstrap.min.js" />
@@ -1297,7 +1307,7 @@
     <Content Include="Content\styles\bootstrap-select.min.css" />
     <Content Include="Content\styles\bootstrap.min.css" />
     <Content Include="Content\styles\flag-icon.min.css" />
-    <Content Include="Content\TicketTemplate\BoardingPass.PNG">
+    <Content Include="Content\TicketTemplate\template_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Global.asax" />
@@ -1316,6 +1326,7 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\PayPalController.cs" />
     <Compile Include="Controllers\SkyScannerController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1326,6 +1337,8 @@
     <Compile Include="Models\TicketViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\Settings.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Services\TicketService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

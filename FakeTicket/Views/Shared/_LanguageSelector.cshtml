@@ -1,5 +1,4 @@
 ﻿@using System.Threading
-<script src="~/Content/script/angular.min.js"></script>
 <script>
     var currentCulture = "@Thread.CurrentThread.CurrentCulture";
     var languages = [
@@ -179,6 +178,8 @@
         $scope.selectedLang = currentCulture;
     });
 </script>
-<select ng-app="fakeTickets" ng-controller="languageSelector" class="selectpicker" data-width="fit" ng-model="selectedLang">
-    <option ng-repeat="language in languages track by $index" data-content='<span class="flag-icon flag-icon-{{languages[$index].Code.split("-")[1].toLowerCase()}}"></span> {{languages[$index].Name}}' value="{{languages[$index].Code}}">{{language}}</option>
-</select>
+<div class="row">
+    <select ng-app="fakeTickets" ng-controller="languageSelector" class="selectpicker pull-right" data-width="fit" ng-model="selectedLang">
+        <option ng-repeat="language in languages track by $index" data-content='<span class="flag-icon flag-icon-{{languages[$index].Code.split("-")[1].toLowerCase()}}"></span> {{languages[$index].Name}}' value="{{languages[$index].Code}}">{{language}}</option>
+    </select>
+</div>
